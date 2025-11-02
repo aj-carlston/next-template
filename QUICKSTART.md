@@ -6,7 +6,7 @@
 
 1. **Clone the template:**
    ```powershell
-   git clone https://github.com/aj-carlston/optivo.git my-new-app
+   git clone https://github.com/aj-carlston/next-template.git my-new-app
    cd my-new-app
    ```
 
@@ -42,7 +42,7 @@
 
 1. **Clone and setup:**
    ```powershell
-   git clone https://github.com/aj-carlston/optivo.git my-new-app
+   git clone https://github.com/aj-carlston/next-template.git my-new-app
    cd my-new-app
    Remove-Item -Recurse -Force .git
    git init

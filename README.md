@@ -23,7 +23,7 @@ A modern Next.js 16 starter template with a complete neomorphic UI component lib
 
 ```bash
 # Clone the repository
-git clone https://github.com/aj-carlston/optivo.git my-new-app
+git clone https://github.com/aj-carlston/next-template.git my-new-app
 cd my-new-app
 
 # Remove the existing git history (start fresh)
