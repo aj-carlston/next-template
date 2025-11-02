@@ -1,0 +1,146 @@
+@use 'default' as d
+@use 'dracula' as dr
+@use 'corporate' as corp
+
+// Default theme (Default Light - High Contrast)
+:root
+  --background: #{d.$default-light-background}
+  --foreground: #{d.$default-light-foreground}
+  --selection: #{d.$default-light-selection}
+  --comment: #{d.$default-light-comment}
+  --primary: #{d.$default-light-primary}
+  --secondary: #{d.$default-light-secondary}
+  --accent: #{d.$default-light-accent}
+  --muted: #{d.$default-light-muted}
+  --success: #{d.$default-success}
+  --warning: #{d.$default-warning}
+  --danger: #{d.$default-danger}
+  --card: #{d.$default-light-card}
+  --border: #{d.$default-light-border}
+  --shadow: #{d.$default-light-shadow}
+  --highlight: #{d.$default-light-highlight}
+  --top-shadow: #{d.$default-light-top-shadow}
+  --bottom-shadow: #{d.$default-light-bottom-shadow}
+
+// Default Dark Theme
+[data-theme='default-dark']
+  --background: #{d.$default-dark-background}
+  --foreground: #{d.$default-dark-foreground}
+  --selection: #{d.$default-dark-selection}
+  --comment: #{d.$default-dark-comment}
+  --primary: #{d.$default-dark-primary}
+  --secondary: #{d.$default-dark-secondary}
+  --accent: #{d.$default-dark-accent}
+  --muted: #{d.$default-dark-muted}
+  --success: #{d.$default-success}
+  --warning: #{d.$default-warning}
+  --danger: #{d.$default-danger}
+  --card: #{d.$default-dark-card}
+  --border: #{d.$default-dark-border}
+  --shadow: #{d.$default-dark-shadow}
+  --highlight: #{d.$default-dark-highlight}
+  --top-shadow: #{d.$default-dark-top-shadow}
+  --bottom-shadow: #{d.$default-dark-bottom-shadow}
+
+// Default Light Theme (explicit)
+[data-theme='default-light']
+  --background: #{d.$default-light-background}
+  --foreground: #{d.$default-light-foreground}
+  --selection: #{d.$default-light-selection}
+  --comment: #{d.$default-light-comment}
+  --primary: #{d.$default-light-primary}
+  --secondary: #{d.$default-light-secondary}
+  --accent: #{d.$default-light-accent}
+  --muted: #{d.$default-light-muted}
+  --success: #{d.$default-success}
+  --warning: #{d.$default-warning}
+  --danger: #{d.$default-danger}
+  --card: #{d.$default-light-card}
+  --border: #{d.$default-light-border}
+  --shadow: #{d.$default-light-shadow}
+  --highlight: #{d.$default-light-highlight}
+  --top-shadow: #{d.$default-light-top-shadow}
+  --bottom-shadow: #{d.$default-light-bottom-shadow}
+
+// Dracula Dark Theme
+[data-theme='dracula-dark']
+  --background: #{dr.$dracula-dark-background}
+  --foreground: #{dr.$dracula-dark-foreground}
+  --selection: #{dr.$dracula-dark-selection}
+  --comment: #{dr.$dracula-dark-comment}
+  --primary: #{dr.$dracula-purple}
+  --secondary: #{dr.$dracula-pink}
+  --accent: #{dr.$dracula-cyan}
+  --muted: #{dr.$dracula-dark-muted}
+  --success: #{dr.$dracula-success}
+  --warning: #{dr.$dracula-warning}
+  --danger: #{dr.$dracula-danger}
+  --orange: #{dr.$dracula-orange}
+  --card: #{dr.$dracula-dark-card}
+  --border: #{dr.$dracula-dark-border}
+  --shadow: #{dr.$dracula-dark-shadow}
+  --highlight: #{dr.$dracula-dark-highlight}
+  --top-shadow: #{dr.$dracula-dark-top-shadow}
+  --bottom-shadow: #{dr.$dracula-dark-bottom-shadow}
+
+// Dracula Light Theme
+[data-theme='dracula-light']
+  --background: #{dr.$dracula-light-background}
+  --foreground: #{dr.$dracula-light-foreground}
+  --selection: #{dr.$dracula-light-selection}
+  --comment: #{dr.$dracula-light-comment}
+  --primary: #{dr.$dracula-purple-light}
+  --secondary: #{dr.$dracula-pink-light}
+  --accent: #{dr.$dracula-cyan-light}
+  --muted: #{dr.$dracula-light-muted}
+  --success: #{dr.$dracula-success}
+  --warning: #{dr.$dracula-warning}
+  --danger: #{dr.$dracula-danger}
+  --orange: #{dr.$dracula-orange-light}
+  --card: #{dr.$dracula-light-card}
+  --border: #{dr.$dracula-light-border}
+  --shadow: #{dr.$dracula-light-shadow}
+  --highlight: #{dr.$dracula-light-highlight}
+  --top-shadow: #{dr.$dracula-light-top-shadow}
+  --bottom-shadow: #{dr.$dracula-light-bottom-shadow}
+
+// Corporate Dark Theme - Professional Navy
+[data-theme='corporate-dark']
+  --background: #{corp.$corporate-dark-background}
+  --foreground: #{corp.$corporate-dark-foreground}
+  --selection: #{corp.$corporate-dark-selection}
+  --comment: #{corp.$corporate-dark-comment}
+  --primary: #{corp.$corporate-dark-primary}
+  --secondary: #{corp.$corporate-dark-secondary}
+  --accent: #{corp.$corporate-dark-accent}
+  --muted: #{corp.$corporate-dark-muted}
+  --success: #{corp.$corporate-success}
+  --warning: #{corp.$corporate-warning}
+  --danger: #{corp.$corporate-danger}
+  --card: #{corp.$corporate-dark-card}
+  --border: #{corp.$corporate-dark-border}
+  --shadow: #{corp.$corporate-dark-shadow}
+  --highlight: #{corp.$corporate-dark-highlight}
+  --top-shadow: #{corp.$corporate-dark-top-shadow}
+  --bottom-shadow: #{corp.$corporate-dark-bottom-shadow}
+
+// Corporate Light Theme - Clean Professional
+[data-theme='corporate-light']
+  --background: #{corp.$corporate-light-background}
+  --foreground: #{corp.$corporate-light-foreground}
+  --selection: #{corp.$corporate-light-selection}
+  --comment: #{corp.$corporate-light-comment}
+  --primary: #{corp.$corporate-light-primary}
+  --secondary: #{corp.$corporate-light-secondary}
+  --accent: #{corp.$corporate-light-accent}
+  --muted: #{corp.$corporate-light-muted}
+  --success: #{corp.$corporate-success}
+  --warning: #{corp.$corporate-warning}
+  --danger: #{corp.$corporate-danger}
+  --card: #{corp.$corporate-light-card}
+  --border: #{corp.$corporate-light-border}
+  --shadow: #{corp.$corporate-light-shadow}
+  --highlight: #{corp.$corporate-light-highlight}
+  --top-shadow: #{corp.$corporate-light-top-shadow}
+  --bottom-shadow: #{corp.$corporate-light-bottom-shadow}
+

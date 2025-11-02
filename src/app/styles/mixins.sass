@@ -1,0 +1,37 @@
+// Responsive breakpoint mixin
+@mixin respond-to($breakpoint)
+  @if $breakpoint == 'sm'
+    @media (min-width: 640px)
+      @content
+  @else if $breakpoint == 'md'
+    @media (min-width: 768px)
+      @content
+  @else if $breakpoint == 'lg'
+    @media (min-width: 1024px)
+      @content
+  @else if $breakpoint == 'xl'
+    @media (min-width: 1280px)
+      @content
+  @else if $breakpoint == '2xl'
+    @media (min-width: 1536px)
+      @content
+
+// Flex center mixin
+@mixin flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+// Card mixin
+@mixin card
+  background: var(--card)
+  border: 1px solid var(--border)
+  border-radius: 0.5rem
+  padding: 1.5rem
+
+// Hover effect mixin with theme-aware shadow
+@mixin hover-lift
+  transition: transform 150ms ease, box-shadow 150ms ease
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 8px 16px var(--shadow)

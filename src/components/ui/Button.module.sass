@@ -1,0 +1,159 @@
+@use '@/app/styles/variables' as *
+
+.button
+  position: relative
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  gap: 0.5rem
+  font-weight: 500
+  border: none
+  cursor: pointer
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  font-family: inherit
+  outline: none
+  
+  &:focus-visible
+    outline: 2px solid var(--primary)
+    outline-offset: 2px
+  
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+// Sizes
+.sm
+  padding: 0.5rem 1rem
+  font-size: 0.875rem
+  border-radius: 1rem
+
+.md
+  padding: 0.75rem 1.5rem
+  font-size: 0.9375rem
+  border-radius: 1.25rem
+
+.lg
+  padding: 1rem 2rem
+  font-size: 1rem
+  border-radius: 1.5rem
+
+// Soft neomorphic variant (main style from the image)
+.soft
+  background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, white 15%), color-mix(in srgb, var(--background) 100%, black 10%))
+  color: var(--foreground)
+  border: 1px solid var(--border)
+  box-shadow: 4px 4px 8px var(--shadow), -4px -4px 8px var(--highlight), 0 1px 2px var(--shadow)
+  
+  &:hover:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, white 20%), color-mix(in srgb, var(--background) 100%, black 8%))
+    box-shadow: 3px 3px 6px var(--shadow), -3px -3px 6px var(--highlight), 0 2px 4px var(--shadow)
+    transform: translateY(-1px)
+  
+  &:active:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, black 8%), color-mix(in srgb, var(--background) 100%, white 10%))
+    box-shadow: inset 2px 2px 4px var(--shadow), inset -2px -2px 4px var(--highlight)
+    transform: translateY(0)
+
+// Primary colored button
+.primary
+  background: linear-gradient(145deg, color-mix(in srgb, var(--primary) 100%, white 25%), color-mix(in srgb, var(--primary) 100%, black 20%))
+  color: var(--background)
+  border: 1px solid color-mix(in srgb, var(--primary) 80%, var(--foreground))
+  box-shadow: 3px 3px 6px var(--shadow), -3px -3px 6px var(--highlight), 0 1px 2px var(--shadow)
+  
+  &:hover:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--primary) 100%, white 30%), color-mix(in srgb, var(--primary) 100%, black 15%))
+    box-shadow: 2px 2px 5px var(--shadow), -2px -2px 5px var(--highlight), 0 2px 4px var(--shadow)
+    transform: translateY(-1px)
+  
+  &:active:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--primary) 100%, black 20%), color-mix(in srgb, var(--primary) 100%, white 15%))
+    box-shadow: inset 2px 2px 4px color-mix(in srgb, var(--primary) 80%, black), inset -2px -2px 4px color-mix(in srgb, var(--primary) 90%, white)
+    transform: translateY(0)
+
+// Secondary colored button
+.secondary
+  background: linear-gradient(145deg, color-mix(in srgb, var(--secondary) 100%, white 25%), color-mix(in srgb, var(--secondary) 100%, black 20%))
+  color: var(--background)
+  border: 1px solid color-mix(in srgb, var(--secondary) 80%, var(--foreground))
+  box-shadow: 3px 3px 6px var(--shadow), -3px -3px 6px var(--highlight), 0 1px 2px var(--shadow)
+  
+  &:hover:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--secondary) 100%, white 30%), color-mix(in srgb, var(--secondary) 100%, black 15%))
+    box-shadow: 2px 2px 5px var(--shadow), -2px -2px 5px var(--highlight), 0 2px 4px var(--shadow)
+    transform: translateY(-1px)
+  
+  &:active:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--secondary) 100%, black 20%), color-mix(in srgb, var(--secondary) 100%, white 15%))
+    box-shadow: inset 2px 2px 4px color-mix(in srgb, var(--secondary) 80%, black), inset -2px -2px 4px color-mix(in srgb, var(--secondary) 90%, white)
+    transform: translateY(0)
+
+// Icon button (small, square/circular)
+.icon
+  background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, white 15%), color-mix(in srgb, var(--background) 100%, black 10%))
+  color: var(--foreground)
+  border: 1px solid var(--border)
+  padding: 0.75rem
+  min-width: 3rem
+  min-height: 3rem
+  border-radius: 1.25rem
+  box-shadow: 3px 3px 6px var(--shadow), -3px -3px 6px var(--highlight), 0 1px 2px var(--shadow)
+  
+  &:hover:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, white 20%), color-mix(in srgb, var(--background) 100%, black 8%))
+    box-shadow: 2px 2px 5px var(--shadow), -2px -2px 5px var(--highlight), 0 2px 4px var(--shadow)
+    transform: translateY(-1px)
+  
+  &:active:not(:disabled)
+    background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, black 8%), color-mix(in srgb, var(--background) 100%, white 10%))
+    box-shadow: inset 2px 2px 4px var(--shadow), inset -2px -2px 4px var(--highlight)
+    transform: translateY(0)
+
+// Ghost button (transparent with border)
+.ghost
+  background: transparent
+  color: var(--foreground)
+  border: 1px solid transparent
+  box-shadow: none
+  
+  &:hover:not(:disabled)
+    background: transparent
+    border: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent)
+    box-shadow: 4px 4px 12px var(--bottom-shadow), -4px -4px 12px var(--top-shadow)
+    transform: translateY(-2px)
+  
+  &:active:not(:disabled)
+    background: transparent
+    border: 1px solid color-mix(in srgb, var(--foreground) 30%, transparent)
+    box-shadow: inset 2px 2px 6px var(--bottom-shadow), inset -2px -2px 6px var(--top-shadow)
+    transform: translateY(0)
+
+// Loading state
+.loading
+  pointer-events: none
+
+.loadingText
+  display: inline-flex
+  gap: 0.15em
+
+.loadingChar
+  display: inline-block
+  color: var(--foreground)
+  animation: fadeInOut 1.8s ease-in-out infinite
+
+.spinner
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+@keyframes spin
+  to
+    transform: rotate(360deg)
+
+@keyframes fadeInOut
+  0%, 100%
+    opacity: 0.3
+    transform: scale(0.8)
+  50%
+    opacity: 1
+    transform: scale(1.1)

@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## UI: Button component
+
+Modern, theme-aware button lives in `src/components/ui/Button.tsx` with styles in `src/components/ui/Button.module.sass`.
+
+- Variants: `primary`, `secondary`, `accent`, `success`, `warning`, `danger`, `ghost`, `outline`, `link`
+- Sizes: `sm`, `md`, `lg`
+- Props: `loading`, `fullWidth`, `iconOnly`, plus all native button props
+
+Examples:
+
+```tsx
+import Button from '@/components/ui/Button';
+
+<Button variant="primary">Save</Button>
+<Button variant="outline" size="sm">Cancel</Button>
+<Button variant="ghost" loading>Working…</Button>
+<Button variant="link" onClick={...}>Learn more</Button>
+<Button fullWidth>Continue</Button>
+```

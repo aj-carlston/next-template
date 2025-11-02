@@ -1,0 +1,188 @@
+@use '@/app/styles/variables' as *
+
+.dropdownWrapper
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
+  width: auto
+
+.fullWidth
+  width: 100%
+
+.label
+  font-size: 0.875rem
+  font-weight: 500
+  color: var(--foreground)
+  margin-bottom: 0.25rem
+
+.selectContainer
+  position: relative
+  width: 100%
+
+.trigger
+  appearance: none
+  width: 100%
+  padding: 0.75rem 2.5rem 0.75rem 1rem
+  font-size: 0.9375rem
+  font-family: inherit
+  color: var(--foreground)
+  background: var(--background)
+  border: 1px solid var(--border)
+  border-radius: 1rem
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  outline: none
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: space-between
+  text-align: left
+
+  &:focus
+    border-color: var(--primary)
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)
+
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+// Default variant - inset neomorphic
+.default
+  box-shadow: inset 2px 2px 4px var(--bottom-shadow), inset -2px -2px 4px var(--top-shadow)
+
+  &:focus
+    box-shadow: inset 1px 1px 2px var(--bottom-shadow), inset -1px -1px 2px var(--top-shadow), 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)
+
+  &.open
+    box-shadow: inset 1px 1px 2px var(--bottom-shadow), inset -1px -1px 2px var(--top-shadow)
+
+// Filled variant - elevated neomorphic
+.filled
+  background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, white 5%), color-mix(in srgb, var(--background) 100%, black 3%))
+  box-shadow: 2px 2px 4px var(--bottom-shadow), -2px -2px 4px var(--top-shadow)
+
+  &:focus,
+  &.open
+    background: var(--background)
+    box-shadow: inset 1px 1px 2px var(--bottom-shadow), inset -1px -1px 2px var(--top-shadow), 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)
+
+// Error state
+.error
+  border-color: var(--danger)
+
+  &:focus
+    box-shadow: inset 2px 2px 4px var(--bottom-shadow), inset -2px -2px 4px var(--top-shadow), 0 0 0 3px color-mix(in srgb, var(--danger) 20%, transparent)
+
+.placeholder
+  color: var(--comment)
+
+.arrow
+  position: absolute
+  right: 1rem
+  top: 50%
+  transform: translateY(-50%)
+  pointer-events: none
+  color: var(--foreground)
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+
+.arrowOpen
+  transform: translateY(-50%) rotate(180deg)
+
+.dropdown
+  position: absolute
+  top: calc(100% + 0.5rem)
+  left: 0
+  right: 0
+  background: var(--background)
+  border: 1px solid var(--border)
+  border-radius: 1rem
+  box-shadow: 4px 4px 8px var(--bottom-shadow), -4px -4px 8px var(--top-shadow), 0 4px 12px var(--bottom-shadow)
+  padding: 0.5rem
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
+  z-index: 1000
+  max-height: 300px
+  overflow-y: auto
+  animation: slideDown 200ms ease
+
+.option
+  width: 100%
+  padding: 0.75rem 1rem
+  font-size: 1.125rem
+  font-weight: 500
+  font-family: inherit
+  color: var(--foreground)
+  background: transparent
+  border: none
+  border-radius: 0.5rem
+  cursor: pointer
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  display: inline-flex
+  align-items: center
+  justify-content: space-between
+  text-align: left
+  position: relative
+
+  span
+    position: relative
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+    display: inline-block
+    
+    &::after
+      content: ''
+      position: absolute
+      bottom: -2px
+      left: 0
+      width: 0
+      height: 2px
+      background: linear-gradient(90deg, var(--primary), var(--secondary))
+      transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      box-shadow: 0 0 8px var(--primary)
+
+  &:hover:not(:disabled)
+    span
+      transform: scale(1.05)
+    
+    span::after
+      width: 100%
+
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+.selected
+  color: var(--primary)
+  font-weight: 600
+
+  span
+    transform: scale(1.05)
+
+  span::after
+    width: 100%
+    background: linear-gradient(90deg, var(--primary), var(--secondary))
+
+.checkmark
+  margin-left: 0.5rem
+  color: var(--primary)
+  font-weight: 700
+
+@keyframes slideDown
+  from
+    opacity: 0
+    transform: translateY(-10px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+.errorText
+  font-size: 0.8125rem
+  color: var(--danger)
+  margin-top: -0.25rem
+
+.helperText
+  font-size: 0.8125rem
+  color: var(--comment)
+  margin-top: -0.25rem

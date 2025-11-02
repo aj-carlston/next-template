@@ -1,0 +1,119 @@
+@use '@/app/styles/variables' as *
+
+.header
+  position: sticky
+  top: 0
+  z-index: 100
+  background: var(--background)
+  border-bottom: 1px solid var(--border)
+  backdrop-filter: blur(10px)
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--bottom-shadow) 20%, transparent)
+  display: flex
+  justify-content: center
+
+.container
+  width: 98%
+  max-width: 98%
+  padding: 1rem 2rem
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 2rem
+
+.logo
+  display: flex
+  align-items: center
+  gap: 0.75rem
+  cursor: pointer
+  user-select: none
+
+.logoIcon
+  font-size: 1.75rem
+  line-height: 1
+  animation: float 3s ease-in-out infinite
+
+.logoText
+  font-size: 1.5rem
+  font-weight: 700
+  background: linear-gradient(135deg, var(--primary), var(--secondary))
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.nav
+  display: flex
+  align-items: center
+  gap: 2rem
+  flex: 1
+  justify-content: center
+
+  @media (max-width: 768px)
+    display: none
+
+.navButton
+  padding: 0.5rem 0
+  font-size: 1rem
+  font-weight: 500
+  font-family: inherit
+  color: var(--foreground)
+  background: transparent
+  border: none
+  cursor: pointer
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+
+  span
+    position: relative
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+    display: inline-block
+    text-align: center
+    
+    &::after
+      content: ''
+      position: absolute
+      bottom: -2px
+      left: 0
+      width: 0
+      height: 2px
+      background: linear-gradient(90deg, var(--primary), var(--secondary))
+      transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+      box-shadow: 0 0 8px var(--primary)
+
+  &:hover
+    span
+      transform: scale(1.05)
+    
+    span::after
+      width: 100%
+
+.active
+  color: var(--primary)
+  font-weight: 600
+
+  span
+    transform: scale(1.05)
+
+  span::after
+    width: 100%
+    background: linear-gradient(90deg, var(--primary), var(--secondary))
+
+.actions
+  display: flex
+  align-items: center
+  gap: 0.75rem
+
+@keyframes float
+  0%, 100%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-5px)
+
+@media (max-width: 768px)
+  .container
+    padding: 1rem 1.5rem
+  
+  .logoText
+    font-size: 1.25rem

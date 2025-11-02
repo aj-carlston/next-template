@@ -1,0 +1,58 @@
+@use '@/app/styles/variables' as *
+
+.container
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 2rem
+  background: var(--background)
+
+.card
+  width: 100%
+  max-width: 28rem
+  padding: 3rem 2.5rem
+
+.content
+  text-align: center
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 1.5rem
+
+.errorCode
+  font-size: 6rem
+  font-weight: 800
+  background: linear-gradient(135deg, var(--primary), var(--secondary))
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  line-height: 1
+  animation: pulse 2s ease-in-out infinite
+
+.title
+  font-size: 2rem
+  font-weight: 700
+  color: var(--foreground)
+  margin: 0
+
+.message
+  font-size: 1.125rem
+  color: var(--comment)
+  margin: 0
+  line-height: 1.6
+
+.actions
+  display: flex
+  gap: 1rem
+  margin-top: 1rem
+  flex-wrap: wrap
+  justify-content: center
+
+@keyframes pulse
+  0%, 100%
+    transform: scale(1)
+    opacity: 1
+  50%
+    transform: scale(1.05)
+    opacity: 0.8

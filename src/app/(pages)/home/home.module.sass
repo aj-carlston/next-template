@@ -1,0 +1,69 @@
+@use '@/app/styles/mixins' as *
+
+.container
+  min-height: 100vh
+  padding: 2rem
+  background: var(--background)
+  width: 95%
+  max-width: 95%
+  margin: 0 auto
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  margin-bottom: 3rem
+  gap: 2rem
+
+  @media (max-width: 768px)
+    flex-direction: column
+    align-items: stretch
+
+.title
+  font-size: 2.5rem
+  font-weight: 700
+  color: var(--foreground)
+  margin: 0 0 0.5rem 0
+
+.subtitle
+  font-size: 1.125rem
+  color: var(--comment)
+  margin: 0
+
+.section
+  width: 100%
+  margin: 0 0 3rem 0
+
+  h2
+    font-size: 1.5rem
+    font-weight: 600
+    color: var(--foreground)
+    margin: 0 0 1.5rem 0
+
+.grid
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+  align-items: center
+
+.formGrid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+  gap: 1.5rem
+
+.cardGrid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  gap: 1.5rem
+
+.widgetGrid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+  gap: 1.5rem
+
+
+.buttonGrid
+  display: flex
+  flex-wrap: wrap
+  gap: 1rem
+  align-items: center

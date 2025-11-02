@@ -1,0 +1,103 @@
+@use '@/app/styles/variables' as *
+
+.inputWrapper
+  display: flex
+  flex-direction: column
+  gap: 0.5rem
+  width: auto
+
+.fullWidth
+  width: 100%
+
+.label
+  font-size: 0.875rem
+  font-weight: 500
+  color: var(--foreground)
+  margin-bottom: 0.25rem
+
+.inputContainer
+  position: relative
+  width: 100%
+
+.input
+  padding: 0.75rem 1rem
+  font-size: 0.9375rem
+  font-family: inherit
+  color: var(--foreground)
+  background: var(--background)
+  border: 1px solid var(--border)
+  border-radius: 1rem
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+  outline: none
+  width: 100%
+
+  &.withToggle
+    padding-right: 3rem
+
+  &::placeholder
+    color: var(--comment)
+
+  &:focus
+    border-color: var(--primary)
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)
+
+  &:disabled
+    opacity: 0.5
+    cursor: not-allowed
+
+// Default variant - inset neomorphic
+.default
+  box-shadow: inset 2px 2px 4px var(--bottom-shadow), inset -2px -2px 4px var(--top-shadow)
+
+  &:focus
+    box-shadow: inset 1px 1px 2px var(--bottom-shadow), inset -1px -1px 2px var(--top-shadow), 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)
+
+// Filled variant - elevated neomorphic
+.filled
+  background: linear-gradient(145deg, color-mix(in srgb, var(--background) 100%, white 5%), color-mix(in srgb, var(--background) 100%, black 3%))
+  box-shadow: 2px 2px 4px var(--bottom-shadow), -2px -2px 4px var(--top-shadow)
+
+  &:focus
+    background: var(--background)
+    box-shadow: inset 1px 1px 2px var(--bottom-shadow), inset -1px -1px 2px var(--top-shadow), 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent)
+
+// Error state
+.error
+  border-color: var(--danger)
+
+  &:focus
+    box-shadow: inset 2px 2px 4px var(--bottom-shadow), inset -2px -2px 4px var(--top-shadow), 0 0 0 3px color-mix(in srgb, var(--danger) 20%, transparent)
+
+.errorText
+  font-size: 0.8125rem
+  color: var(--danger)
+  margin-top: -0.25rem
+
+.helperText
+  font-size: 0.8125rem
+  color: var(--comment)
+  margin-top: -0.25rem
+
+.toggleButton
+  position: absolute
+  right: 0.75rem
+  top: 50%
+  transform: translateY(-50%)
+  background: transparent
+  border: none
+  cursor: pointer
+  font-size: 1.25rem
+  padding: 0.25rem
+  display: flex
+  align-items: center
+  justify-content: center
+  color: var(--comment)
+  transition: all 0.2s ease
+  line-height: 1
+
+  &:hover
+    color: var(--foreground)
+    transform: translateY(-50%) scale(1.1)
+
+  &:active
+    transform: translateY(-50%) scale(0.95)

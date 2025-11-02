@@ -1,0 +1,57 @@
+@use 'styles/themes/index'
+@use 'styles/variables' as *
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+html, body
+  max-width: 100vw
+  overflow-x: hidden
+  font-family: $font-sans
+  background: var(--background)
+  color: var(--foreground)
+  transition: background-color 250ms ease, color 250ms ease
+
+a
+  color: var(--primary)
+  text-decoration: none
+  transition: color 150ms ease
+  &:hover
+    color: var(--accent)
+
+code
+  font-family: $font-mono
+
+::selection
+  background: var(--selection)
+  color: var(--foreground)
+
+// Custom scrollbar styling
+::-webkit-scrollbar
+  width: 12px
+  height: 12px
+
+::-webkit-scrollbar-track
+  background: var(--background)
+  border-radius: 10px
+  box-shadow: inset 2px 2px 4px var(--bottom-shadow), inset -2px -2px 4px var(--top-shadow)
+
+::-webkit-scrollbar-thumb
+  background: linear-gradient(135deg, var(--primary), var(--secondary))
+  border-radius: 10px
+  box-shadow: 2px 2px 4px var(--bottom-shadow), -2px -2px 4px var(--top-shadow)
+  border: 2px solid var(--background)
+  
+  &:hover
+    background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 80%, white), color-mix(in srgb, var(--secondary) 80%, white))
+    box-shadow: 3px 3px 6px var(--bottom-shadow), -3px -3px 6px var(--top-shadow)
+  
+  &:active
+    background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 70%, black), color-mix(in srgb, var(--secondary) 70%, black))
+
+// Firefox scrollbar
+*
+  scrollbar-width: thin
+  scrollbar-color: var(--primary) var(--background)
